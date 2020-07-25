@@ -13,21 +13,39 @@ class Main extends Component{
             index: 0
            
         }
+        // this.nextPage = this.nextPage.bind(this)
+    }
 
+    nextPage = () => {
+        const {data,index} = this.state
+       if(index < data.length - 1 ){
+        this.setState({index:index + 1}) 
+       }else{
+        this.setState({index: 0})
+       }
+    }
+
+    previousPage = () =>{
+        const {data,index} = this.state
+        if(index > 0){
+        this.setState({index: index - 1})
+        }else{
+         this.setState({index:data.length - 1}) 
+        }
     }
 
 
 
-
     render(){
-        // console.log(this.state.data)
+        const {data,index} = this.state
         return(
             <div>
-                <Cards info={this.state.data} in={this.state.index}/>
-                <Buttons />
+                <Cards data={data} index={index}/>
+                <Buttons nextPage={this.nextPage} previousPage={this.previousPage} />
             </div>
         )
     }
 }
 
 export default Main
+

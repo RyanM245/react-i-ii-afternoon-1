@@ -1,17 +1,26 @@
 import React, {Component} from 'react'
 
 class Cards extends Component{
-    constructor(props){
-        super(props)
+    constructor(){
+        super()
         this.state = {
 
         }
     }
 
     render(){
+        const {data,index} = this.props
         return(
         <div>
-            {this.props.data}
+            {index + 1 }/{data.length}
+            {data[index].city}
+            {data[index].country}
+            {data[index].name.first}
+            {data[index].name.last}
+           <ol> {data[index].favoriteMovies.map(el => {
+                return <li>{el}</li>
+            })}</ol>
+            
 
         </div>
         )
