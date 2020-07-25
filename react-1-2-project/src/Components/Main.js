@@ -40,8 +40,10 @@ class Main extends Component{
         const {data,index} = this.state
         return(
             <div>
+            <div>
                 <Cards data={data} index={index}/>
                 <Buttons nextPage={this.nextPage} previousPage={this.previousPage} />
+            </div>
             </div>
         )
     }

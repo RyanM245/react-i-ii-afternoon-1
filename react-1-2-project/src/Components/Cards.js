@@ -11,13 +11,19 @@ class Cards extends Component{
     render(){
         const {data,index} = this.props
         return(
-        <div>
-            {index + 1 }/{data.length}
-            {data[index].city}
-            {data[index].country}
-            {data[index].name.first}
-            {data[index].name.last}
-           <ol> {data[index].favoriteMovies.map(el => {
+        <div className = 'cards-main'>
+            <p className = 'index'> {index + 1 }/{data.length} </p>
+
+            <h1 className = 'name'> {data[index].name.first} {data[index].name.last} </h1>
+
+            <p className = 'person-info'> <b>From:</b>{data[index].city}, {data[index].country} </p>
+
+            <p className = 'person-info'> <b>Job Title:</b> {data[index].title} </p>
+            
+            <p className = 'person-info'> <b>Employer: </b>{data[index].employer} </p>
+
+            <b className = 'person-info '> Favorite Movies:</b>
+           <ol className = 'person-info movie-info'> {data[index].favoriteMovies.map(el => {
                 return <li>{el}</li>
             })}</ol>
             

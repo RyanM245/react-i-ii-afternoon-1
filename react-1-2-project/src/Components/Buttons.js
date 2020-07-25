@@ -12,9 +12,9 @@ class Buttons extends Component{
     render(){
         const {previousPage,nextPage} = this.props
         return(
-        <div>
-             <button onClick = {previousPage}>&lt; Previous</button>
-            <button onClick = {nextPage}>Next &gt;</button>
+        <div className = 'button-main'>
+             <button onClick = {previousPage} className = 'button'>&lt; Previous</button>
+            <button onClick = {nextPage} className = 'button'>Next &gt;</button>
 
         </div>
         )
